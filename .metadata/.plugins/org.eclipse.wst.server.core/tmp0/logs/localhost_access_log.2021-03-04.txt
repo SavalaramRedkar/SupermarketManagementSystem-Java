@@ -1,0 +1,10 @@
+127.0.0.1 - - [04/Mar/2021:20:02:34 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:02:36 +0530] "GET /Supermarket_Management_System/signup.jsp HTTP/1.1" 200 941
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:02:36 +0530] "GET /Supermarket_Management_System/css/signup-style.css HTTP/1.1" 200 1885
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:04:29 +0530] "GET /Supermarket_Management_System/signup.jsp HTTP/1.1" 200 941
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:04:29 +0530] "GET /Supermarket_Management_System/css/signup-style.css HTTP/1.1" 200 1885
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:04:33 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+127.0.0.1 - - [04/Mar/2021:20:27:33 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:27:34 +0530] "GET /Supermarket_Management_System/signup.jsp HTTP/1.1" 200 941
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:27:49 +0530] "GET /Supermarket_Management_System/signup.jsp HTTP/1.1" 200 941
+0:0:0:0:0:0:0:1 - - [04/Mar/2021:20:28:44 +0530] "POST /Supermarket_Management_System/signupAction.jsp HTTP/1.1" 500 2588
