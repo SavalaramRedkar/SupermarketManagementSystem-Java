@@ -14,30 +14,30 @@ h3 {
 }
 
 .alert {
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin: auto;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    width: 800px;
+	position: relative;
+	padding: .75rem 1.25rem;
+	margin: auto;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	width: 800px;
 }
 
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+	color: #155724;
+	background-color: #d4edda;
+	border-color: #c3e6cb;
 }
 
 .alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
 }
 
 .alert-warning {
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
+	color: #856404;
+	background-color: #fff3cd;
+	border-color: #ffeeba;
 }
 
 .edit {
@@ -53,9 +53,9 @@ h3 {
 </style>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<!-- <div style="color: white; text-align: center; font-size: 30px;">
 		Edit Products <i class='fab fa-elementor'></i>
-	</div>
+	</div> -->
 	<%
 String msg=request.getParameter("msg");
 if("done".equals(msg))
@@ -93,8 +93,9 @@ if("wrong".equals(msg))
 				<td><%=rs.getString(2) %></td>
 				<td><%=rs.getString(3) %></td>
 				<td><i class="fa fa-inr"></i> <%=rs.getString(4) %></td>
-				<td><a class="edit" href="editProduct.jsp?id=<%=rs.getString(1) %>">Edit
-						<i class='fas fa-pen-fancy'></i>
+				<td><a class="edit"
+					href="editProduct.jsp?id=<%=rs.getString(1) %>">Edit <i
+						class='fas fa-pen-fancy'></i>
 				</a></td>
 			</tr>
 			<%

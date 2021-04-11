@@ -66,22 +66,24 @@
 	} catch (Exception e) {
 	}
 	%>
-	
-	
+
+
 	<div id='container'>
 		<div class='add'>
 			<form action="addNewProductAction.jsp" method="post">
 				<input type="hidden" name="id" value="<%out.println(id);%>">
-				<input type="text" name="name" autocomplete="off" placeholder="Enter Name" required>
-				<input type="text" name="category" autocomplete="off" placeholder="Enter category" required>
-				<input type="number" name="price" autocomplete="off" placeholder="Enter price" required>
-				<input type="submit" value="Save">
+				<input type="text" name="name" autocomplete="off"
+					placeholder="Enter Name" required> <input type="text"
+					name="category" autocomplete="off" placeholder="Enter category"
+					required> <input type="number" name="price"
+					autocomplete="off" placeholder="Enter price" required> <input
+					type="submit" value="Save">
 			</form>
 		</div>
 
 	</div>
-	
-	
+
+
 </body>
 <br>
 <br>

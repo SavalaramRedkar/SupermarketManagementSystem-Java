@@ -81,9 +81,9 @@ h3 {
 </style>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<!-- <div style="color: white; text-align: center; font-size: 30px;">
 		My Cart <i class='fas fa-cart-arrow-down'></i>
-	</div>
+	</div> -->
 	<%
 	String msg = request.getParameter("msg");
 	if ("notPossible".equals(msg)) {
@@ -129,7 +129,9 @@ h3 {
 			%>
 			<tr>
 				<th scope="col" style="background-color: #28a745;">Total:&nbsp;<i
-					class="fa fa-inr"></i>&nbsp;<% out.println(total); %>
+					class="fa fa-inr"></i>&nbsp;<%
+				out.println(total);
+				%>
 				</th>
 				<%
 				// if(total>0){
@@ -152,7 +154,8 @@ h3 {
 		</thead>
 		<tbody>
 			<%
-			ResultSet rs = st.executeQuery("select * from product inner join cart on product.id=cart.product_id and cart.email='"
+			ResultSet rs = st.executeQuery(
+					"select product.id,product.name,product.category,cart.price,cart.quantity,cart.total from product inner join cart on product.id=cart.product_id and cart.email='"
 					+ email + "' and cart.address is NULL");
 			while (rs.next()) {
 			%>
@@ -171,11 +174,11 @@ h3 {
 				<td><a style="color: black;"
 					href="incDecQuantityAction.jsp?id=<%=rs.getString(1)%>&quantity=inc">
 						<i class='fas fa-plus-circle'></i>
-				</a> &nbsp;<%=rs.getString(8)%>&nbsp; <a style="color: black;"
+				</a> &nbsp;<%=rs.getString(5)%>&nbsp; <a style="color: black;"
 					href="incDecQuantityAction.jsp?id=<%=rs.getString(1)%>&quantity=dec">
 						<i class='fas fa-minus-circle'></i>
 				</a></td>
-				<td><i class="fa fa-inr"></i>&nbsp;<%=rs.getString(10)%></td>
+				<td><i class="fa fa-inr"></i>&nbsp;<%=rs.getString(6)%></td>
 				<td><a class="remove"
 					href="removeFromCart.jsp?id=<%=rs.getString(1)%>">Remove <i
 						class='fas fa-trash-alt'></i>

@@ -9,17 +9,17 @@
 <title>Home</title>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<!-- <div style="color: white; text-align: center; font-size: 30px;">
 		My Orders <i class='fab fa-elementor'></i>
-	</div>
+	</div> -->
 
 	<%
-try {
-	
-	Connection con = ConnectionProvider.getCon();
-	Statement st1 = con.createStatement();
-	ResultSet rs1 = st1.executeQuery("select * from confirm_orders where email = '"+email+"' ");
-	if (rs1.next()) {
+	try {
+
+		Connection con = ConnectionProvider.getCon();
+		Statement st1 = con.createStatement();
+		ResultSet rs1 = st1.executeQuery("select * from confirm_orders where email = '" + email + "' ");
+		if (rs1.next()) {
 	%>
 
 	<table>
@@ -36,43 +36,45 @@ try {
 		</thead>
 		<tbody>
 			<%
-			int sno=0;
-			Statement st=con.createStatement();
-	      	ResultSet rs=st.executeQuery("select * from product inner join cart on product.id=cart.product_id and cart.email='"+email+"' and cart.address is NULL");
-			while(rs.next())
-			{
+			int sno = 0;
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(
+					"select product.id,product.name,product.category,cart.price,cart.quantity,cart.total from product inner join cart on product.id=cart.product_id and cart.email='"
+					+ email + "' and cart.address is NULL");
+			while (rs.next()) {
 			%>
 			<tr>
-				<%sno=sno+1; %>
+				<%
+				sno = sno + 1;
+				%>
 				<td>
-					<%out.println(sno); %>
+					<%
+					out.println(sno);
+					%>
 				</td>
-				<td><%=rs.getString(2) %></td>
-				<td><%=rs.getString(3) %></td>
-				<td><%=rs.getString(4) %></td>
-				<td><%=rs.getString(8) %></td>
-				<td><%=rs.getString(10) %></td>
+				<td><%=rs.getString(2)%></td>
+				<td><%=rs.getString(3)%></td>
+				<td><%=rs.getString(4)%></td>
+				<td><%=rs.getString(5)%></td>
+				<td><%=rs.getString(6)%></td>
 			</tr>
 			<%
-	      }
-	      
-	%>
+			}
+			%>
 
 		</tbody>
 	</table>
 
 	<%
 	}
-	
-	
-} catch (Exception e) {
-	System.out.println(e);	
-}
 
-%>
+	} catch (Exception e) {
+	System.out.println(e);
+	}
+	%>
 
-<br>
-<br>
+	<br>
+	<br>
 
 </body>
 </html>
